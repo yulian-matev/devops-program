@@ -18,4 +18,4 @@ COPY app .
 
 EXPOSE 5000
 #CMD echo hello $(whoami)
-CMD python3  /opt/devops-programme/app_test.py
+CMD python3  /opt/devops-programme/app.py

@@ -1,0 +1,40 @@
+- hosts: localhost
+  gather_facts: no
+  become: no
+  vars:
+    image_name: ymatev/python-app
+    image_tag: 0.1
+    listen_port: 5001
+
+
+  tasks:
+    - name: Create code directory
+      file:
+        dest: code/
+        state: directory
+
+    - name: Get latests application form GitHub
+      git:
+        repo: git@github.com:yulian-matev/devops-programme.git
+        version: ymatev
+        dest: code/
+
+    - name: Build image "{{ image_name }}:{{ image_tag }}" and with build args
+      community.docker.docker_image:
+        name: "{{ image_name }}:{{ image_tag }}"
+        build:
+          path: code/
+          args:
+            listen_port: "{{ listen_port }}"
+        source: build
+
+
+    - name: ensure a container is running
+      community.docker.docker_container:
+        name: M1-3-1
+        state: started
+        image: "{{ image_name }}:{{ image_tag }}"
+        env:
+          PORT: "{{ listen_port | int }}"
+        ports:
+          - "{{ listen_port }}:{{ listen_port }}"

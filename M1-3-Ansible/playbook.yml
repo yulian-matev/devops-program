@@ -16,7 +16,7 @@
     - name: Get latests application form GitHub
       git:
         repo: git@github.com:yulian-matev/devops-programme.git
-        version: ymatev
+        version: homework/M1-3-1
         dest: code/
 
     - name: Build image "{{ image_name }}:{{ image_tag }}" and with build args

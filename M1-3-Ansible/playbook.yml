@@ -2,7 +2,7 @@
   gather_facts: no
   become: no
   vars:
-    image_name: ymatev/python-app
+    image_name: ymatev/M1-3-1_python-app
     image_tag: 0.1
     listen_port: 5001
 
@@ -25,11 +25,11 @@
         build:
           path: code/
           args:
-            listen_port: "{{ listen_port }}"
+            FLASK_APP_PORT: "{{ listen_port }}"
         source: build
+        push: true
 
-
-    - name: ensure a container is running
+    - name: Make sure docker container is running
       community.docker.docker_container:
         name: M1-3-1
         state: started

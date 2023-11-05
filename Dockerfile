@@ -16,6 +16,8 @@ USER usr_app
 
 COPY app .
 
-EXPOSE 5000
+ARG FLASK_APP_PORT=5000
+EXPOSE $FLASK_APP_PORT
+
 #CMD echo hello $(whoami)
 CMD python3  /opt/devops-programme/app.py

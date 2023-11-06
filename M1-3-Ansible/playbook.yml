@@ -2,8 +2,8 @@
   gather_facts: no
   become: no
   vars:
-    image_name: ymatev/M1-3-1_python-app
-    image_tag: 0.1
+    image_name: ymatev/homework_m1-3-1_python-app
+    image_tag: 0.3
     listen_port: 5001
 
 
@@ -16,12 +16,16 @@
     - name: Get latests application form GitHub
       git:
         repo: git@github.com:yulian-matev/devops-programme.git
-        version: homework/M1-3-1
+        version: ymatev
         dest: code/
 
-    - name: Build image "{{ image_name }}:{{ image_tag }}" and with build args
+    - name: Building docker image "{{ image_name }}:{{ image_tag }}" and push to DockerHub
       community.docker.docker_image:
         name: "{{ image_name }}:{{ image_tag }}"
+        #docker_host: "unix://{{ ansible_env.HOME }}/.rd/docker.sock"                   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+                                                                                        # ansible_env.HOME -> requires   'gather_facts: yes'
+        #docker_host: "unix://{{ ansible_env.HOME }}/.docker/run/docker-cli-api.sock"   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+        docker_host: "unix:///var/run/docker.sock"                                      # [default] opiton is OK
         build:
           path: code/
           args:

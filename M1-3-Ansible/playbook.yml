@@ -1,0 +1,44 @@
+- hosts: localhost
+  gather_facts: no
+  become: no
+  vars:
+    image_name: ymatev/homework_m1-3-1_python-app
+    image_tag: 0.3
+    listen_port: 5001
+
+
+  tasks:
+    - name: Create code directory
+      file:
+        dest: code/
+        state: directory
+
+    - name: Get latests application form GitHub
+      git:
+        repo: git@github.com:yulian-matev/devops-programme.git
+        version: ymatev
+        dest: code/
+
+    - name: Building docker image "{{ image_name }}:{{ image_tag }}" and push to DockerHub
+      community.docker.docker_image:
+        name: "{{ image_name }}:{{ image_tag }}"
+        #docker_host: "unix://{{ ansible_env.HOME }}/.rd/docker.sock"                   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+                                                                                        # ansible_env.HOME -> requires   'gather_facts: yes'
+        #docker_host: "unix://{{ ansible_env.HOME }}/.docker/run/docker-cli-api.sock"   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+        docker_host: "unix:///var/run/docker.sock"                                      # [default] opiton is OK
+        build:
+          path: code/
+          args:
+            FLASK_APP_PORT: "{{ listen_port }}"
+        source: build
+        push: true
+
+    - name: Make sure docker container is running
+      community.docker.docker_container:
+        name: M1-3-1
+        state: started
+        image: "{{ image_name }}:{{ image_tag }}"
+        env:
+          PORT: "{{ listen_port | int }}"
+        ports:
+          - "{{ listen_port }}:{{ listen_port }}"

@@ -11,8 +11,8 @@ Below table try to organize __homeworks__ into:
 
 | N | Topic | Specification | Solution Pull Request |
 |---|---|---|---|
-| 1 | Configuration Management |  [M1-3-1 Configuration Management Spec](https://github.com/vutoff/devops-programme/blob/main/ansible/README.md) |  [PR M1-3-1](https://github.com/yulian-matev/devops-programme/pull/1) |
-| 2 |  Secrets management | [Ansible vault spec](#secrets-management) | |
+| 1 | Configuration Management |  [M1-3-1 Configuration Management Spec](https://github.com/vutoff/devops-programme/blob/main/ansible/README.md) |  [PR M1-3-1](https://github.com/yulian-matev/devops-programme/pull/1) (inside other repo) |
+| 2 |  Secrets management | [Ansible vault spec](#secrets-management) | [PR-login-secrets](https://github.com/yulian-matev/devops-program/pull/1)|
 
 
 ## Homework specs

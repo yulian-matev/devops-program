@@ -15,8 +15,8 @@
 
     - name: Get latests application form GitHub
       git:
-        repo: git@github.com:yulian-matev/devops-programme.git
-        version: ymatev
+        repo: https://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@github.com/yulian-matev/devops-program.git
+        version: main
         dest: code/
 
     - name: Building docker image "{{ image_name }}:{{ image_tag }}" and push to DockerHub

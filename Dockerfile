@@ -8,7 +8,7 @@ RUN apt-get update \
 WORKDIR /opt/devops-programme
 
 # Install requirements
-COPY requirements.txt .
+COPY app/requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN useradd -ms /bin/bash usr_app

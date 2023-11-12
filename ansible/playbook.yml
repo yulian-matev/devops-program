@@ -5,21 +5,31 @@
     image_name: ymatev/homework_m1-3-1_python-app
     image_tag: 0.3
     listen_port: 5001
+    application_directory: "code"
+  vars_files:
+    - secrets.yml
 
 
   tasks:
-    - name: Create code directory
+
+    - name: Create {{ application_directory }} directory
       file:
-        dest: code/
+        dest: "{{ application_directory }}"
         state: directory
+        mode: 0755
 
-    - name: Get latests application form GitHub
+    - name: Get latests application from GitHub
       git:
-        repo: https://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@github.com/yulian-matev/devops-program.git
+        repo: "https://{{ github_access_token }}@github.com/yulian-matev/devops-program.git"
         version: main
-        dest: code/
+        dest: "{{ application_directory }}"
+        
+    - name: Login to Docker Hub using user account "{{ dockerhub_username }}"
+      docker_login:
+        username: "{{ dockerhub_username }}"
+        password: "{{ dockerhub_password }}"
 
-    - name: Building docker image "{{ image_name }}:{{ image_tag }}" and push to DockerHub
+    - name: Building docker image "{{ image_name }}:{{ image_tag }}" and push to Docker Hub
       community.docker.docker_image:
         name: "{{ image_name }}:{{ image_tag }}"
         #docker_host: "unix://{{ ansible_env.HOME }}/.rd/docker.sock"                   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
@@ -27,7 +37,7 @@
         #docker_host: "unix://{{ ansible_env.HOME }}/.docker/run/docker-cli-api.sock"   # "Error connecting: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
         docker_host: "unix:///var/run/docker.sock"                                      # [default] opiton is OK
         build:
-          path: code/
+          path: "{{ application_directory }}"
           args:
             FLASK_APP_PORT: "{{ listen_port }}"
         source: build

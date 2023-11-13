@@ -1,12 +1,15 @@
+"""We need to do unit test"""
 import unittest
 
 from app import app
 
 
+"""My very importatn app test"""
 class TestApp(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
 
+"""Testing hello world"""
     def test_hello_world(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)

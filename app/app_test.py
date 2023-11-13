@@ -6,6 +6,11 @@ from app import app
 
 """My very importatn app test"""
 class TestApp(unittest.TestCase):
+
+    def __init__(self):
+        self.client=""
+
+
     def setUp(self):
         self.client = app.test_client()
 

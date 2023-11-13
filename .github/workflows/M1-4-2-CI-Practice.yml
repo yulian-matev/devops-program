@@ -1,9 +1,6 @@
 name: Pylint
 run-name: ${{ github.actor }} is testing Pylint
-on: 
-  push:
-    paths:
-      - 'app/**.py'
+on: [push]
 jobs:
 
   editorconfig:

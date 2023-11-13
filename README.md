@@ -1,6 +1,6 @@
 # DevOps Programme - yulian-matev's personal repo
 
- 
+
 ## Homework map 
 Below table try to organize __homeworks__ into:
 * topics
@@ -26,5 +26,4 @@ From https://learn.telerikacademy.com/mod/assign/view.php?id=58263
   to your DockerHUB account to publish the built image. Open a PR and submit
   a link to ti. Remember - !!!do not publish your Ansible Vault password.!!!
   ```
-
 

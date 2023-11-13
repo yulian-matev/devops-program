@@ -3,8 +3,10 @@ run-name: ${{ github.actor }} is testing Pylint
 on: [push]
 
 jobs:
-  build:
+  code-checker-pylint:
     runs-on: ubuntu-latest
+    paths:
+      - '**.py'
     strategy:
       matrix:
         python-version: ["3.8", "3.9", "3.10"]

@@ -36,7 +36,7 @@ jobs:
 #    - name: Analysing the code with pylint
 #      run: |
 #        printenv
-#        pwd 
+#        pwd
 #        cd app/
 #        pylint $(git ls-files '*.py')
 
@@ -86,7 +86,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        projectBaseDir: my-custom-directory
+        projectBaseDir: app
         args: >
           -Dsonar.organization=yulian-matev
           -Dsonar.projectKey=yulian-matev

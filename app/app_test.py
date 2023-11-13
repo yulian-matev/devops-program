@@ -7,7 +7,7 @@ from app import app
 """My very importatn app test"""
 class TestApp(unittest.TestCase):
 
-    def __init__(self):
+    def __init__():
         self.client=""
 
 

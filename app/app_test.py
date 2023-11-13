@@ -9,8 +9,9 @@ class TestApp(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
 
-"""Testing hello world"""
+
     def test_hello_world(self):
+        """Testing hello world"""
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, b"Hello, World!")

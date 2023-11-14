@@ -7,9 +7,9 @@ Below table try to organize __homeworks__ into:
 * topics
 * specifications
 * pull requests  
-    * In order to facilitate tracking, course __homework__ solutions are organized
-      into pull requests. Each pull request consist of all commits needed to
-      solve coresponding homework task:
+   * In order to facilitate tracking, course __homework__ solutions are organized
+     into pull requests. Each pull request consist of all commits needed to
+     solve coresponding homework task:
 
 | N | Topic                    | Specification | Solution Pull Request |
 |---|--------------------------|---------------|-----------------------|

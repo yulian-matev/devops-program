@@ -7,9 +7,9 @@ from app import app
 """My very importatn app test"""
 class TestApp(unittest.TestCase):
 
-    def __init__(self, arg):
+    def __init__(selfrg):
         self.client=""
-
+        super(ChildClass, self).__init__()
 
     def setUp(self):
         self.client = app.test_client()

@@ -4,12 +4,9 @@ import unittest
 from app import app
 
 
-"""My very importatn app test"""
-class TestApp(unittest.TestCase):
 
-    # def __init__(self):
-    #     self.client=""
-    #     super(ChildClass, self).__init__()
+class TestApp(unittest.TestCase):
+    """My very importatn TestApp"""
 
     def setUp(self):
         self.client = app.test_client()

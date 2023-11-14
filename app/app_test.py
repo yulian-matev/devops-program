@@ -7,9 +7,9 @@ from app import app
 """My very importatn app test"""
 class TestApp(unittest.TestCase):
 
-    def __init__(selfrg):
-        self.client=""
-        super(ChildClass, self).__init__()
+    # def __init__(self):
+    #     self.client=""
+    #     super(ChildClass, self).__init__()
 
     def setUp(self):
         self.client = app.test_client()
@@ -23,6 +23,6 @@ class TestApp(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestApp)
-    unittest.TextTestRunner().run(suite)
-    #unittest.main()
+    #suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestApp)
+    #unittest.TextTestRunner().run(suite)
+    unittest.main()

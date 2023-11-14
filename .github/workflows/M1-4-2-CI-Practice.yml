@@ -48,13 +48,13 @@ jobs:
       - run: pip install pylint -r requirements.txt
       - run: pylint **/*.py
 
-  markdown-checker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-      - name: Run Markdown Lint
-        uses: actionshub/markdownlint@main
+  # markdown-checker:                     Not able to set configuration
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Check out code
+  #       uses: actions/checkout@v4
+  #     - name: Run Markdown Lint
+  #       uses: actionshub/markdownlint@main
 
   markdown-checker2:
     runs-on: ubuntu-latest

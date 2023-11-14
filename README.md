@@ -7,7 +7,9 @@ Below table try to organize __homeworks__ into:
 * topics
 * specifications
 * pull requests  
-  * In order to facilitate tracking, course __homework__ solutions are organized into pull requests. Each pull request consist of all commits needed to solve coresponding homework task:
+  * In order to facilitate tracking, course __homework__ solutions are organized
+    into pull requests. Each pull request consist of all commits needed to
+    solve coresponding homework task:
 
 | N | Topic | Specification | Solution Pull Request |
 |---|---|---|---|
@@ -19,7 +21,7 @@ Below table try to organize __homeworks__ into:
 ### Secrets management
 
 From [telerikacademy](https://learn.telerikacademy.com/mod/assign/view.php?id=58263)
-  
+
   ```text
   Create an Ansible vault. Store credentials to your Docker hub in that vault.
   Update the playbook you've created last time to use those credentials to login

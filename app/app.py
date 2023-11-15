@@ -1,4 +1,4 @@
-"""Module providing a function printing python version."""
+"""Module providing access to environment vars"""
 import os
 
 from flask import Flask

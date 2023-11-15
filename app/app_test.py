@@ -6,7 +6,7 @@ from app import app
 
 
 class TestApp(unittest.TestCase):
-    """My very importatn TestApp"""
+    """My very important TestApp"""
 
     def setUp(self):
         self.client = app.test_client()

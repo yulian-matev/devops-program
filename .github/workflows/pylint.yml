@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - 'app/**.py'
+  
+  pull_request:
+    branches:    
+      - 'feature/**'
 
 jobs:
   editorconfig:

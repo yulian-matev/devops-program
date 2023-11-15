@@ -23,7 +23,7 @@
         repo: "https://{{ github_access_token }}@github.com/yulian-matev/devops-program.git"
         version: main
         dest: "{{ application_directory }}"
-        
+
     - name: Login to Docker Hub using user account "{{ dockerhub_username }}"
       docker_login:
         username: "{{ dockerhub_username }}"

@@ -1,12 +1,12 @@
 name: Pylint
 run-name: ${{ github.actor }} is testing Pylint
-on: 
+on:
   push:
     paths:
       - 'app/**.py'
-  
+
   pull_request:
-    branches:    
+    branches:
       - 'feature/**'
 
 jobs:

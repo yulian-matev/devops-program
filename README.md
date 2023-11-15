@@ -32,6 +32,8 @@ From [telerikacademy](https://learn.telerikacademy.com/mod/assign/view.php?id=58
 
 ### GitHub actions
 
+From [telerikacademy](https://learn.telerikacademy.com/calendar/view.php?view=day&time=1699999200)
+
 ```text
 Make your workflow trigger on pull request.
 

@@ -1,4 +1,3 @@
-"""We need to do unit test"""
 import unittest
 
 from app import app

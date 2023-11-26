@@ -14,4 +14,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: false
-          tags: user/app:latest
+          tags: ymatev/ci-practice:${{ env.sha_short }}
+      -
+        name: Debug step
+        run: |
+            echo "Branch: ${{ env.branch }}"
+            echo "Sha: ${{ env.sha_short }}"

@@ -17,7 +17,6 @@ To get an overview of the project, read the [README](README.md) file. Here are s
 - [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
 - [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
 
-
 ## Getting started
 
 To navigate our codebase with confidence, see [the introduction to working in the docs repository](/contributing/README.md) :confetti_ball:. For more information on how we write our markdown files, see "[Using Makrdown and Liquid in GitHub Docs](https://docs.github.com/en/contributing/writing-for-github-docs/using-markdown-and-liquid-in-github-docs).
@@ -40,7 +39,7 @@ Scan through our [existing issues](https://github.com/github/docs/issues) to fin
 
 Click **Make a contribution** at the bottom of any docs page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the `.md` file where you can make your changes and [create a pull request](#pull-request) for a review.
 
- <img src="/contributing/images/contribution_cta.png" />
+  <img src="/contributing/images/contribution_cta.png" />
 
 #### Make changes in a codespace
 
@@ -49,6 +48,7 @@ For more information about using a codespace for working on GitHub documentation
 #### Make changes locally
 
 1. Fork the repository.
+
 - Using GitHub Desktop:
   - [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/getting-started-with-github-desktop) will guide you through setting up Desktop.
   - Once Desktop is set up, you can use it to [fork the repo](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop)!

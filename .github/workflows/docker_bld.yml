@@ -14,9 +14,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: false
-          tags: "ymatev/ci-practice:${{ env.sha_short }}"
+          tags: "ymatev/ci-practice:${{ github.sha }}"
       -
         name: Debug step
         run: |
-            echo "Branch: ${{ env.branch }}"
-            echo "Sha: ${{ env.sha_short }}"
+            echo "Branch: ${{ github.ref }}"
+            echo "Sha: ${{ github.sha }}"

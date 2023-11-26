@@ -57,7 +57,7 @@ see "[Working in a codespace](https://github.com/github/docs/blob/main/contribut
   you're ready to merge them.
 
 2; Install or update to **Node.js**, at the version specified in `.node-version`.
-   For more information, see [the development guide](contributing/development.md).
+  For more information, see [the development guide](contributing/development.md).
 
 3; Create a working branch and start with your changes!
 

@@ -1,8 +1,12 @@
 name: Pylint
 run-name: ${{ github.actor }} is on practice session M1-4-2-CI-Practice
-on: [push]
+on:
+  push:
+    branches:
+      - 'feat**'
+      
 jobs:
-
+  
   editorconfig:
     runs-on: ubuntu-20.04
     steps:

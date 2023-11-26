@@ -18,7 +18,7 @@ jobs:
         name: Build and NO push
         uses: docker/build-push-action@v5
         with:
-          push: yes
+          push: true
           tags: "ymatev/ci-practice:${{ github.sha }}"
       -
         name: Debug step

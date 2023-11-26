@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - 'feat**'
-      
+
 jobs:
-  
+
   editorconfig:
     runs-on: ubuntu-20.04
     steps:

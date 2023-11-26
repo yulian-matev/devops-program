@@ -14,7 +14,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       -
         name: Build and NO push
         uses: docker/build-push-action@v5
@@ -24,9 +24,20 @@ jobs:
           tags: "ymatev/ci-practice:test-image"
 
       -
-        name: Test test-image
+        name: Test (list) test-image
         run: |
           docker images
+
+      - 
+        name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+            image-ref: 'ymatev/ci-practice:test-image'
+            format: 'table'
+            exit-code: '1'
+            ignore-unfixed: true
+            vuln-type: 'os,library'
+            severity: 'CRITICAL,HIGH'
 
       -
         name: Build and Push

@@ -14,15 +14,31 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
       -
         name: Build and NO push
         uses: docker/build-push-action@v5
         with:
+          load: true
+          push: false
+          tags: "ymatev/ci-practice:test-image"
+
+      -
+        name: Test test-image
+        run: |
+          docker images
+
+      -
+        name: Build and Push
+        uses: docker/build-push-action@v5
+        with:
           push: true
           tags: "ymatev/ci-practice:${{ github.sha }}"
-      -
-        name: Debug step
-        run: |
-            echo "Branch: ${{ github.ref }}"
-            echo "Sha: ${{ github.sha }}"
-            env
+    
+
+      # -
+      #   name: Debug step
+      #   run: |
+      #       echo "Branch: ${{ github.ref }}"
+      #       echo "Sha: ${{ github.sha }}"
+      #       env

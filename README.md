@@ -45,6 +45,9 @@ Run a simple workflow with: * lint
 
 ### GitHub actions practice
 
+Taken from [vutoff/devops-programme/M1-4-2-CI-Practice/readme](https://github.com/vutoff/devops-programme/tree/fd5ac9158bb7d1c0e8c61d066750c387530c10c6/M1-4-2-CI-Practice#readme)
+
+```md
 Create a GitHub Actions pipeline that runs on commit to a feature branch (i.e.
 not `main`) and performs the following checks on our simple Flask app repository.
 
@@ -80,3 +83,4 @@ not `main`) and performs the following checks on our simple Flask app repository
  vulnerabilities are found
 
 :warning: Try and use ready-made GH Actions. Avoid shell-out if possible
+```

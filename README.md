@@ -80,7 +80,7 @@ not `main`) and performs the following checks on our simple Flask app repository
 :warning: Make sure that you run as many tests in parallel as you see fit
 
 :warning: Make sure you don't push your image to Docker HUB if Critical
- vulnerabilities are found
+vulnerabilities are found
 
 :warning: Try and use ready-made GH Actions. Avoid shell-out if possible
 ```

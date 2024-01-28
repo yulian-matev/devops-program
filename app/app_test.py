@@ -1,3 +1,4 @@
+"""We need to do unit test"""
 import unittest
 
 from app import app
@@ -5,6 +6,7 @@ from app import app
 
 
 class TestApp(unittest.TestCase):
+
     """My very important TestApp"""
 
     def setUp(self):
@@ -19,4 +21,6 @@ class TestApp(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    # suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestApp)
+    # unittest.TextTestRunner().run(suite)
     unittest.main()
